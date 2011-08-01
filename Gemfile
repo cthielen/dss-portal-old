@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'jquery-rails'
 
+gem 'rubycas-client'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
