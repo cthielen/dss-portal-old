@@ -23,7 +23,7 @@ namespace :deploy do
     task :symlink_shared do
       run "mkdir -p #{shared_path}/config"
       run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-      run "ln -nfs #{shared_path}/config/api_keys.yml #{release_path}/config/api_keys.yml"
+      run "ln -nfs #{shared_path}/config/api_key.yml #{release_path}/config/api_key.yml"
       run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     end
 

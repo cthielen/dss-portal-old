@@ -33,3 +33,5 @@ gem 'rubycas-client'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'mysql'
