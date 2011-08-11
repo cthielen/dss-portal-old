@@ -1,2 +1,3 @@
 keys:
+  uri: "https://the_uri.com/api/"
   key: "secret"
