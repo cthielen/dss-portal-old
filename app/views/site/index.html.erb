@@ -18,8 +18,9 @@
 
 		<h2>Unavailable</h2>
 		<ul>
-			<li><a href="#">eVote</a> <small><a href="#">[Request]</a></small></li>
-			<li><a href="#">Roles Management</a> <small><a href="#">[Request]</a></small></li>
+			<% current_user.apps.app.each do |app | %>
+				<li><%= link_to app.name, app.url %> <small><a href="#">[Request]</a></small></li>
+			<% end %>
 		</ul>
 
 	</div>		<!-- .block_content ends -->

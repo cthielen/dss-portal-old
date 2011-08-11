@@ -50,7 +50,7 @@
 					<!--<li class="active"><%= link_to "Overview", :controller => "site", :action => "index" %></li>-->
 				</ul>
 				
-				<p class="user">Hello, <a href="#"><%= current_user.first %></a> | <%= link_to "Logout", :controller => "site", :action => "logout" %></p>
+				<p class="user">Hello, <a href="#"><%= current_user.preferred %></a> | <%= link_to "Logout", :controller => "site", :action => "logout" %></p>
 			</div> <!-- #header -->
 			
 			<%= yield %>
