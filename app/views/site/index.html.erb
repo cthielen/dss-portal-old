@@ -14,7 +14,7 @@
 		<h2>Available</h2>
 		<ul>
 		  <li><a href="https://my.dss.ucdavis.edu/roles">Manage Profile</a></li>
-		  <% current_user.apps.each do |app | %>
+		  <% current_user.apps.each do |app| %>
 			  <li><%= link_to app.display_name, app.url %></li>
 			<% end %>
 		</ul>
@@ -22,7 +22,7 @@
 		<h2>Unavailable</h2>
 		<ul>
 		  <% if current_user.known_attributes.include? "requestable_apps" %>
-			  <% current_user.requestable_apps.each do |app | %>
+			  <% current_user.requestable_apps.each do |app| %>
 				  <li><%= link_to app.display_name, app.url %> <small><a href="#">[Request]</a></small></li>
 			  <% end %>
 			<% else %>
