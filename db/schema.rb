@@ -10,6 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110801182044) do
+ActiveRecord::Schema.define(:version => 20110822194929) do
+
+  create_table "user_favorites", :force => true do |t|
+    t.string   "user_id"
+    t.string   "name"
+    t.string   "url"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

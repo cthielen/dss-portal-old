@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: MyString
+  name: MyString
+  url: MyString
+  order: 1
+
+two:
+  user_id: MyString
+  name: MyString
+  url: MyString
+  order: 1
