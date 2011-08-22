@@ -2,7 +2,7 @@
 <div class="message warning"><p>The file server will be offline this Thursday from 7:00 AM to 9:00 AM for upgrades.</p></div>
 <% end %>
 
-<div class="block small left">
+<div class="block small left withsidebar">
 	<div class="block_head">
 		<div class="bheadl"></div>
 		<div class="bheadr"></div>
@@ -11,24 +11,37 @@
 	</div>		<!-- .block_head ends -->
 
 	<div class="block_content">
-		<h2>Available</h2>
-		<ul>
-		  <li><a href="https://my.dss.ucdavis.edu/roles">Manage Profile</a></li>
-		  <% current_user.apps.each do |app| %>
-			  <li><%= link_to app.display_name, app.url %></li>
-			<% end %>
-		</ul>
+	  <div class="sidebar">
+			<ul class="sidemenu">
+				<li><a href="#sb1">Favorites</a></li>
+				<li><a href="#sb2">Departmental</a></li>
+				<li><a href="#sb3">Divisional</a></li>
+				<li><a href="#sb4">Universal</a></li>
+			</ul>
+			
+			<p><strong>There may be more apps available!</strong> Be sure to check all of the above tabs. You may request permission to additional apps via the [Request] links.</p>
+		</div>		<!-- .sidebar ends -->
+		
+		<div class="sidebar_content" id="sb1">
+  		<h2>Available</h2>
+  		<ul>
+  		  <li><a href="https://my.dss.ucdavis.edu/roles">Manage Profile</a></li>
+  		  <% current_user.apps.each do |app| %>
+  			  <li><%= link_to app.display_name, app.url %></li>
+  			<% end %>
+  		</ul>
 
-		<h2>Unavailable</h2>
-		<ul>
-		  <% if current_user.known_attributes.include? "requestable_apps" %>
-			  <% current_user.requestable_apps.each do |app| %>
-				  <li><%= link_to app.display_name, app.url %> <small><a href="#">[Request]</a></small></li>
-			  <% end %>
-			<% else %>
-			  <li>None</li>
-			<% end %>
-		</ul>
+  		<h2>Unavailable</h2>
+  		<ul>
+  		  <% if current_user.known_attributes.include? "requestable_apps" %>
+  			  <% current_user.requestable_apps.each do |app| %>
+  				  <li><%= link_to app.display_name, app.url %> <small><a href="#">[Request]</a></small></li>
+  			  <% end %>
+  			<% else %>
+  			  <li>None</li>
+  			<% end %>
+  		</ul>
+  	</div> <!-- sidebar_content ends -->
 
 	</div>		<!-- .block_content ends -->
 
@@ -79,9 +92,41 @@
 
 	<div class="block_content">
 
-		<p>
+    <table cellpadding="0" cellspacing="0" width="100%" class="sortable">
+		
+			<thead>
+				<tr>
+					<th width="10"><input type="checkbox" class="check_all" /></th>
+					<th>Subject</th>
+					<th>Received</th>
+					<th>From</th>
+					<td>&nbsp;</td>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">Welcome to the DSS Portal!</a></td>
+					<td>August 22, 2011</td>
+					<td><a href="#">DSS IT</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">How to obtain access to more apps.</a></td>
+					<td>August 22, 2011</td>
+					<td><a href="#">DSS IT</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+			</tbody>
+			
+		</table>
+
+		<!--<p>
 		<center><i>You have no messages.</i><br /><br /><small>Messages (not e-mail) may appear here in the future if your attention is required.</small></center>
-		</p>
+		</p>-->
 
 	</div>		<!-- .block_content ends -->
 
