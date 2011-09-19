@@ -2,5 +2,5 @@
 db/*.sqlite3
 log/*.log
 tmp/
-config/api_key.yml
-
+config/api_keys.yml
+.sass-cache/
