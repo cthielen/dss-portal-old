@@ -13,7 +13,8 @@ end
 gem 'sqlite3'
 
 gem 'jquery-rails'
-gem 'rubycas-client'
+
+gem 'rubycas-client', :git => 'https://github.com/rubycas/rubycas-client.git'
 
 # Deploy with Capistrano
 gem 'capistrano'
