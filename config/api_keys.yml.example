@@ -1,3 +1,9 @@
-keys:
-  uri: "https://the_uri.com/api/"
+roles:
+  uri: "https://the_roles_uri.com/api/"
+  name: "DSS Portal"
+  key: "secret"
+
+messages:
+  uri: "https://the_messages_uri.com/api/"
+  name: "DSS Portal"
   key: "secret"
