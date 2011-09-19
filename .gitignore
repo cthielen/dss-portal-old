@@ -4,3 +4,4 @@ log/*.log
 tmp/
 config/api_keys.yml
 .sass-cache/
+.rvmrc
