@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/stffn/declarative_authorization.git
+  revision: bba5e16b858f3b6a9d4abb0621bea70da0cfdf31
+  specs:
+    declarative_authorization (0.5.3)
+
+GIT
   remote: https://github.com/rubycas/rubycas-client.git
   revision: 0e194e01db8b697d29670043f78de0328418f407
   specs:
@@ -145,6 +151,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   coffee-rails (~> 3.1.0)
+  declarative_authorization!
   jquery-rails
   mysql
   rails (= 3.1.0)

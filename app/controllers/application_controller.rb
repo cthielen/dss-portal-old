@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter CASClient::Frameworks::Rails::Filter
-  #before_filter :login_required
+  before_filter :login_required
   
   def login_required
     if session[:cas_user]
       begin
-        @@user = Person.find_by_loginid(session[:cas_user])
+        @@user = Person.find(session[:cas_user])
         return true
       rescue Exception => e
         # User not found
