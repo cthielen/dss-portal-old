@@ -205,12 +205,6 @@ $(function () {
 		});
 	}
 		
-		
-	
-	// Date picker
-	$('input.date_picker').date_input();
-	
-
 
 	// Navigation dropdown fix for IE6
 	if(jQuery.browser.version.substr(0,1) < 7) {
