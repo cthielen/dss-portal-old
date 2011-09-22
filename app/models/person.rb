@@ -6,9 +6,8 @@ class Person < ActiveResource::Base
 
   # ACL symbols
   def role_symbols
-    # Get this app's API key
+    # Get this app's API key information
     api_key = YAML.load_file("#{Rails.root.to_s}/config/api_keys.yml")['roles']['key']
-    # Though we know this, let's keep it configurable in case it changes
     app_name = YAML.load_file("#{Rails.root.to_s}/config/api_keys.yml")['roles']['name']
     
     syms = []

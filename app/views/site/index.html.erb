@@ -104,21 +104,15 @@
 			</thead>
 			
 			<tbody>
+			  <% @messages.each do |message| %>
 				<tr>
 					<td><input type="checkbox" /></td>
-					<td><a href="#">Welcome to the DSS Portal!</a></td>
-					<td>August 22, 2011</td>
-					<td><a href="#">DSS IT</a></td>
+					<td><a href="#"><%= message.subject %></a></td>
+					<td><%= Date.parse(message.sent).strftime("%B %d, %Y") %></td>
+					<td><a href="#"><%= message.from %></a></td>
 					<td class="delete"><a href="#">Delete</a></td>
 				</tr>
-				
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><a href="#">How to obtain access to more apps.</a></td>
-					<td>August 22, 2011</td>
-					<td><a href="#">DSS IT</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
-				</tr>
+				<% end %>
 			</tbody>
 			
 		</table>
