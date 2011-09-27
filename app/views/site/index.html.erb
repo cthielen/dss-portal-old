@@ -14,9 +14,12 @@
 	  <div class="sidebar">
 			<ul class="sidemenu">
 				<li><a href="#sb1">Favorites</a></li>
-				<li><a href="#sb2">Departmental</a></li>
-				<li><a href="#sb3">Divisional</a></li>
-				<li><a href="#sb4">Universal</a></li>
+				<% if @has_special_apps %>
+				  <li><a href="#sb2">Special Access</a></li>
+				<% end %>
+				<li><a href="#sb3">Departmental</a></li>
+				<li><a href="#sb4">Divisional</a></li>
+				<li><a href="#sb5">Universal</a></li>
 			</ul>
 			
 			<p><strong>There may be more apps available!</strong> Be sure to check all of the above tabs. You may request permission to additional apps via the [Request] links.</p>
@@ -40,6 +43,73 @@
   			<% else %>
   			  <li>None</li>
   			<% end %>
+  		</ul>
+  	</div> <!-- sidebar_content ends -->
+
+		<div class="sidebar_content" id="sb2">
+  		<ul>
+  		  <% current_user.apps.each do |app| %>
+  		    <% if app.access == "direct" %>
+  			    <li><%= link_to app.display_name, app.url %></li>
+  			  <% end %>
+  			<% end %>
+  		</ul>
+  	</div> <!-- sidebar_content ends -->
+
+		<div class="sidebar_content" id="sb3">
+  		<h2>Available</h2>
+  		<ul>
+  		  <% current_user.apps.each do |app| %>
+  		    <% if app.access == "ou" %>
+  			    <li><%= link_to app.display_name, app.url %></li>
+  			  <% end %>
+  			<% end %>
+  		</ul>
+
+  		<h2>Unavailable</h2>
+  		<ul>
+  		  <% if current_user.known_attributes.include? "requestable_apps" %>
+  			  <% current_user.requestable_apps.each do |app| %>
+  		      <% if app.access == "ou" %>
+  				    <li><%= link_to app.display_name, app.url %> <small><a href="#">[Request]</a></small></li>
+  				  <% end %>
+  			  <% end %>
+  			<% else %>
+  			  <li>None</li>
+  			<% end %>
+  		</ul>
+  	</div> <!-- sidebar_content ends -->
+
+		<div class="sidebar_content" id="sb4">
+  		<h2>Available</h2>
+  		<ul>
+  		  <% current_user.apps.each do |app| %>
+  		    <% if app.access == "public" %>
+  			    <li><%= link_to app.display_name, app.url %></li>
+  			  <% end %>
+  			<% end %>
+  		</ul>
+
+  		<h2>Unavailable</h2>
+  		<ul>
+  		  <% if current_user.known_attributes.include? "requestable_apps" %>
+  			  <% current_user.requestable_apps.each do |app| %>
+  		      <% if app.access == "public" %>
+  				    <li><%= link_to app.display_name, app.url %> <small><a href="#">[Request]</a></small></li>
+  				  <% end %>
+  			  <% end %>
+  			<% else %>
+  			  <li>None</li>
+  			<% end %>
+  		</ul>
+  	</div> <!-- sidebar_content ends -->
+
+		<div class="sidebar_content" id="sb5">
+  		<ul>
+  		  <li><a href="http://owa.ucdavis.edu/">Outlook Web Access (Mail, Calendars, Contacts)</a></li>
+  		  <li><a href="http://directory.ucdavis.edu/index.html">Update Personal UC Davis Directory Listing</a></li>
+  		  <li><a href="http://timesheets.ucdavis.edu/">UC Davis L&amp;S Timesheets</a></li>
+  		  <li><a href="http://smartsite.ucdavis.edu/">SmartSite Access</a></li>
   		</ul>
   	</div> <!-- sidebar_content ends -->
 
