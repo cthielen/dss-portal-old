@@ -175,7 +175,7 @@
 			  <% @messages.each do |message| %>
 				<tr>
 					<td><input type="checkbox" /></td>
-					<td><a href="#"><%= message.subject %></a></td>
+					<td><a href="javascript:show_message(<%= message.id %>)"><%= message.subject %></a></td>
 					<td><%= Date.parse(message.sent).strftime("%B %d, %Y") %></td>
 					<td><a href="#"><%= message.from %></a></td>
 					<td class="delete"><a href="#">Delete</a></td>
@@ -194,3 +194,6 @@
 	<div class="bendl"></div>
 	<div class="bendr"></div>
 </div>		<!-- .block.small.right ends -->
+
+<!-- for modal dialogs -->
+<div id="message_modal" class="reveal-modal"></div>
