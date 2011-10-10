@@ -808,14 +808,14 @@ a:hover {
 
 /* Small blocks */
 
-.block.small {
+.small {
 	width: 49%;
-	background: #fff url(../images/bnd.gif) bottom center repeat-x;
+	/*background: #fff url(../images/bnd.gif) bottom center repeat-x;*/
 	padding-bottom: 0;
 	}
 
-.block.small.left { float: left; clear: none; }
-.block.small.right { float: right; clear: none; }
+.small.left { float: left; clear: none; }
+.small.right { float: right; clear: none; }
 
 .block.small .block_head { background: url(../images/bhead.gif) 0 0 repeat-x; }
 .block.small .block_content { background: #fff; border-left: 1px solid #ccc; border-right: 1px solid #ccc; }
