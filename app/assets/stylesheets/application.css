@@ -570,6 +570,7 @@ a:hover {
 	padding: 0;
 	width: 93%;
 	float: left;
+	text-align: center;
 	}
 	
 .message.errormsg {
